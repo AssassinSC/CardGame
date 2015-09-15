@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonResultGame;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCardCheck;
 
+- (IBAction)buttonRestart:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *labelScorePlayer;
 @property (strong, nonatomic) ViewController * reloadData;
 

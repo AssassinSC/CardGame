@@ -28,6 +28,12 @@
     [super viewDidLoad];
     aceCount = [[AceCalculate alloc] init];
     playerDeck = [[PlayedDeck alloc] init];
+    index = 0;
+    cardMass = 0;
+    self.labelScorePlayer.text = @"";
+    self.buttonCardCheck.hidden = NO;
+    
+    
     UIImage * backgroundDeck = [UIImage imageNamed:@"backgroundDeckVertical.jpg"];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundDeck];
@@ -75,5 +81,15 @@
     self.buttonCardCheck.hidden = YES;
     
     
+}
+- (IBAction)buttonRestart:(id)sender {
+    
+    for (CardView * removeView in [self.view subviews]) {
+        if ([removeView isMemberOfClass:[CardView class]] || removeView ==  [[self.view subviews] lastObject] ) {
+           [removeView removeFromSuperview];
+        }
+    }
+    
+    [self viewDidLoad];
 }
 @end
